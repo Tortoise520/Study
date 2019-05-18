@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>A页面（被代理页面）</title>
+		<script type="text/javascript">
+			function callback(data) {
+				console.log('成功接收数据', data);
+			}
+		</script>
+	</head>
+	<body>
+		<form action="http://localhost:8080/ProxyTemplate" target="proxyIframe" method="post">
+			callback: <input type="text" name="callback" value="callback" />
+			proxy: <input type="text" name="proxy" value="http://127.0.0.1:8848/JSPattern/ProxyPattern/ProxyTemplate/B.html" />
+			<input type="submit" value="submit" />
+		</form>
+		<iframe name="proxyIframe" id="proxyIframe" src="" style="display: none;"></iframe>
+	</body>
+</html>
