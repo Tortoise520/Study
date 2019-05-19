@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>装饰者模式</title>
+	</head>
+	<script src="js/decorator.js"></script>
+	<body>
+		<form>
+			<label for="name">name:</label> <input type="text" id="name" />
+			<span id="name_warn" style="display: none;">名字不能超过16个字符</span>
+			<span id="name_demo" style="display: inline-block;">请输入名字</span>
+			<br/>
+			<label for="pwd">pwd:</label> <input type="text" id="pwd" />
+			<span id="pwd_warn" style="display: none;">密码不能少于6位数</span>			
+			<span id="pwd_demo" style="display: inline-block;">请输入密码</span>			
+			<br/>
+			<label for="email">email:</label> <input type="text" id="email" />
+			<span id="email_warn" style="display: none;">必需包含@符号</span>
+			<span id="email_demo" style="display: inline-block;">请输入email</span>
+			<br/>
+			<input type="submit" value="Click me" />
+		</form>
+	</body>
+</html>
