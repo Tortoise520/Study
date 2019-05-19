@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>图像代理（虚拟代理）</title>
+		<script type="text/javascript">
+			window.onload = function() {
+				var myImag = (function() {
+					var body = document.body;
+					var img = document.createElement('img');
+					body.appendChild(img);
+					return {
+						setSrc: function(src) {
+							img.src = src;
+						}
+					}
+				})();
+				var proxyImg = (function() {
+					var img = document.createElement('img');
+					img.onload = function() {
+						myImag.setSrc(this.src);
+					}
+					return {
+						setSrc: function(src) {
+							myImag.setSrc('./img/thumbnail.jpg');
+							img.src = src;
+						}
+					}
+
+				})();
+				proxyImg.setSrc('./img/originImg.jpg');
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
